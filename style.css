@@ -16,87 +16,84 @@
 
   body {
     font-family: "Vibur", sans-serif;
-    background-color: #2a182a;
+    background-color: #3880ad;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #container {
+    margin: auto 0;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+    justify-content: end;
+    height: 45%;
   }
 
 
  
   a.button {
-    text-transform: uppercase;
     display: block;
-    float: left;
     position: relative;
     height: 65px;
     width: 230px;
-    margin: 0 10px 18px 0;
- 
+    margin: 20px 0 0 0;
     text-decoration: none;
-    font: 22px Arial, sans-serif;
+    font: 22px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
     font-weight: bold;
     line-height: 65px;
     text-align: center;
- 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: pointer;
-    margin-top: 10%;
 }
 
 a.button:before,
 a.button:after {
-    content: '';
-    position: absolute;
-    left: -1px;
-    height: 65px;
-    width: 230px;
-    bottom: -1px;
- 
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+  content: '';
+  position: absolute;
+  left: -1px;
+  height: 65px;
+  width: 230px;
+  bottom: -1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
  
 a.button:before {
-    height: 23px;
-    bottom: -4px;
-    border-top: 0;
- 
-    -webkit-border-radius: 0 0 3px 3px;
-    -moz-border-radius: 0 0 3px 3px;
-    border-radius: 0 0 3px 3px;
- 
-    -webkit-box-shadow: 0 1px 1px 0px #bfbfbf;
-    -moz-box-shadow: 0 1px 1px 0px #bfbfbf;
-    box-shadow: 0 1px 1px 0px #bfbfbf;
+  height: 65px;
+  bottom: -4px;
+  border-top: 0;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: 0 1px 1px 0px #bfbfbf;
+  -moz-box-shadow: 0 1px 1px 0px #bfbfbf;
+  box-shadow: 0 1px 1px 0px #bfbfbf;
 }
 
 a.color,
 a.color:hover,
 a.color:visited {
-    color: #7b5777;
-    border-bottom: 4px solid #946890;
-    text-shadow: 0px 1px 0px #eacae6;
-    background: #e8c4e4;
-    background: -webkit-gradient(linear, left top, left bottom, from(#e8c4e4), to(#d698d0));
-    background: -moz-linear-gradient(top, #e8c4e4, #d698d0);
-    box-shadow: inset 1px 1px 0 #f2dcef;
+  color: #5d7731;
+  border-bottom: 4px solid #799545;
+  text-shadow: 0px 1px 0px #d5e8aa;
+  background: #cae285;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cae285), to(#a3cd5a));
+  background: -moz-linear-gradient(top, #cae285, #a3cd5a);
+  box-shadow: inset 1px 1px 0 #cce3a1;
 }
  
 .color:before,
 .color:after {
-    border: 1px solid #da9fd4;
-    border-bottom: 1px solid #865d82;
+  border: 1px solid #98b85b;
+  border-bottom: 1px solid #6d883b;
 }
  
 .color:hover {
@@ -108,7 +105,7 @@ a.color:visited {
 a.button:active {
   border: none;
   bottom: -4px;
-  margin-bottom: 22px;
+  margin-bottom: 3px;
 
   -webkit-box-shadow: 0 1px 1px #fff;
   -moz-box-shadow:  0 1px 1px #fff;
@@ -125,12 +122,10 @@ a.button:active:after {
 }
 
 #canvas {
-  position: absolute;
+  position: relative;
   width: 200px;
   height: 200px;
-  margin: auto;
   transform: rotate(45deg);
-  top: 0; bottom: 0; left: 0; right: 0;
 }
 
 .h1 {
@@ -140,8 +135,8 @@ a.button:active:after {
 }
 
 #AI_container {
-  display: none;
-  margin-bottom: 30vh;
+  /*display: none;*/
+  /*margin-bottom: 30vh;*/
   opacity: 0;
   transition: opacity ease 1s 0s;
 }
@@ -150,4 +145,67 @@ a.button:active:after {
   display: none;
   width: 200px;
   height: 200px;
+}
+
+#console {
+  display: none;
+}
+
+#console p {
+  display: inherit;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: limegreen;
+  text-shadow: 0px 0px 10px limegreen;
+}
+
+.msg {
+  display: none;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 5vh;
+  padding-top: 5vh;
+  background: red;
+  box-shadow: 0 0 30px red;
+  text-shadow: 0 0 20px white;
+  color: white;
+  padding : 20px;
+  position: absolute;
+  left: 25%;
+  /*margin-left: -10vw;*/
+  top: 50%;
+  margin-top: -5vh;
+  text-align: center;
+  max-width: 200px;
+  animation-name: blink;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (width <= 700px ) {
+  .msg {
+    left: 25%;
+  }
+}
+
+@media screen and (width > 700px) {
+  .msg {
+    left: 40%;
+  }
 }
