@@ -179,7 +179,7 @@ a.button:active:after {
   left: 25%;
   /*margin-left: -10vw;*/
   top: 50%;
-  margin-top: -5vh;
+  margin-top: -2vh;
   text-align: center;
   max-width: 200px;
   animation-name: blink;
